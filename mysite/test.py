@@ -2,16 +2,25 @@
 команда запуска
 exec(open('mysite/test.py', encoding='utf8').read())
 
-выполнить миграцию всех баз
-python manage.py migrate
-
 валидация схемы модели
 ВНИМАНИЕ приложение должно быть добавлено в INSTALLED_APPS
 python manage.py check
 
-перенести схему в БД
+*****************Создание базы данных********
+1)создать django представление модели модели
 python manage.py makemigrations books
+
+2)синхронизирует модели с базой данных
+выполнить миграцию всех баз
+python manage.py migrate
+*********************************************
+выведет sql из модели:
+python manage.py sqlmigrate books 0001_initial
+
+Запустить сервер
+python manage.py runserver
 '''
+
 from django import template
 # from django.conf import settings
 # settings.configure(settings)
