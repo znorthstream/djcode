@@ -19,7 +19,6 @@ from .views import hello, current_datetime, hours_ahead, mypage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('<int:year>', admin.site.urls),
     path('date/', current_datetime),
     re_path(r'^time/(\d{1,2})/$', hours_ahead),
     path('mypage/', mypage),
